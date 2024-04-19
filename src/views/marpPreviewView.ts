@@ -41,9 +41,11 @@ export class MarpPreviewView extends ItemView  {
 
         if (this.settings.EnableMarkdownItPlugins){
           this.marp
-            .use(markdownItContainer, "container")
             .use(markdownItMark)
             .use(markdownItKroki,{entrypoint: "https://kroki.io"});
+          this.settings.AllowedMarkdownItContainers.forEach(name => {
+            this.marp.use(markdownItContainer, name)
+          });
         }
     }
 

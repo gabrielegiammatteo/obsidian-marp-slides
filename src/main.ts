@@ -249,6 +249,16 @@ export class MarpSlidesSettingTab extends PluginSettingTab {
 					this.plugin.settings.EnableMarkdownItPlugins = value;
 					await this.plugin.saveSettings();
 				}));
+
+		new Setting(containerEl)
+			.setName('MarkdownIt Containers: Allowed names')
+			.setDesc('(Experimental) Specify valid names for Markdown It Containers Plugin')
+			.addTextArea(toggle => toggle
+				.setValue(this.plugin.settings.AllowedMarkdownItContainers.join("\n"))
+				.onChange(async (value) => {
+					this.plugin.settings.AllowedMarkdownItContainers = value.split("\n");
+					await this.plugin.saveSettings();
+				}));
 	}
 }
 

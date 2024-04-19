@@ -7,6 +7,7 @@ export interface MarpSlidesSettings {
 	EXPORT_PATH: string;
 	EnableSyncPreview: boolean;
 	EnableMarkdownItPlugins: boolean;
+	AllowedMarkdownItContainers: string[];
 }
 
 export const DEFAULT_SETTINGS: MarpSlidesSettings = {
@@ -17,5 +18,6 @@ export const DEFAULT_SETTINGS: MarpSlidesSettings = {
 	HTMLExportMode: 'bare',
 	EXPORT_PATH: '',
 	EnableSyncPreview: true,
-	EnableMarkdownItPlugins: false
+	EnableMarkdownItPlugins: false,
+	AllowedMarkdownItContainers: ['container', 'notes', 'warning']
 }
