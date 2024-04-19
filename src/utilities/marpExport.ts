@@ -35,7 +35,7 @@ export class MarpExport {
 
             if (themePath != ''){
                 argv.push('--theme-set');
-                argv.push(themePath);
+                argv.push(themePath + "/*");
             }
 
             switch (type) {
